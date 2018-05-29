@@ -211,3 +211,51 @@ def duplicateN[A](n: Int,ls: List[A]): List[A] = {
 }
 
    
+   /***
+  P16 (**) Drop every Nth element from a list.
+Example:
+scala> drop(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+res0: List[Symbol] = List('a, 'b, 'd, 'e, 'g, 'h, 'j, 'k)
+  */
+
+def drop[A](n:Int, ls: List[A]): List[A] = {
+
+  val ls1 = ls.drop(n)
+  val ls2 = ls.dropRight(ls.length - n +1)
+  val ls3 = ls2 ++ ls1
+   ls3 } 
+   
+   /***
+drop(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+
+P17 (*) Split a list into two parts.
+  The length of the first part is given. Use a Tuple for your result.
+Example:
+
+  scala> split(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+res0: (List[Symbol], List[Symbol]) = (List('a, 'b, 'c),List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+  */
+   
+   def split[A](n:Int, ls: List[A]):(List[A],List[A]) = {
+
+  val ls1 = ls.drop(n)
+  val ls2 = ls.dropRight(ls.length - n)
+  val ls3 = (ls2,ls1)
+  ls3 }
+
+}
+   
+P18 (**) Extract a slice from a list.
+  Given two indices, I and K, the slice is the list containing the elements from and including the Ith element up to but not including the Kth element of the original list. Start counting the elements with 0.
+Example:
+
+  scala> slice(3, 7, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+res0: List[Symbol] = List('d, 'e, 'f, 'g)
+  */
+
+def slice[A](a:Int, b:Int, ls: List[A]): List[A] = {
+
+  val ls1 = ls.drop(a)
+  val ls2 = ls1.dropRight(ls.length - b)
+  ls2
+}
