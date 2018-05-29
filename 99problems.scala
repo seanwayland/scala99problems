@@ -37,6 +37,21 @@ res0: Int = 5
   val ls3 = List(1, 1, 2, 3, 5, 8)
   println(nth(2,ls3))
 
+ /***
+    * P04 (*) Find the number of elements of a list.
+    * Example:
+    * scala> length(List(1, 1, 2, 3, 5, 8))
+    * res0: Int = 6
+    */
+
+// ls.length !! ??
+
+  // Simple recursive solution.
+  def lengthRecursive[A](ls: List[A]): Int = ls match {
+    case Nil       => 0
+    case _ :: tail => 1 + lengthRecursive(tail)
+   
+   
 
 
 
