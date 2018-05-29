@@ -259,3 +259,29 @@ def slice[A](a:Int, b:Int, ls: List[A]): List[A] = {
   val ls2 = ls1.dropRight(ls.length - b)
   ls2
 }
+
+
+/***
+P19 (**) Rotate a list N places to the left.
+  Examples:
+  scala> rotate(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+res0: List[Symbol] = List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k, 'a, 'b, 'c)
+
+scala> rotate(-2, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+res1: List[Symbol] = List('j, 'k, 'a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i)
+  */
+
+
+def rotate[A](n:Int, ls: List[A]):List[A] = {
+  
+  
+var ls1 = ls.dropRight( ls.length - math.abs(n) )
+  var ls2 = ls.drop(math.abs(n))
+  if (n>0) {
+  return ls2 ++ ls1 }
+  else { var ls1 = ls.drop( ls.length -math.abs(n)  )
+    var ls2 = ls.dropRight(math.abs(n) )
+    return ls1 ++ ls2  }
+    
+  
+}
