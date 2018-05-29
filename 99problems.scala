@@ -22,3 +22,21 @@ res0: Int = 5
 
    val ls2 = List(1, 1, 2, 3, 5, 8)
   println(penultimate(ls2))
+
+  def nth[T]( n:Int, ls:List[T]):T = {
+    ls(n)
+  }
+  /***
+    * P03 (*) Find the Kth element of a list.
+    * By convention, the first element in the list is element 0.
+    * Example:
+    *
+    * scala> nth(2, List(1, 1, 2, 3, 5, 8))
+    * res0: Int = 2
+    */
+  val ls3 = List(1, 1, 2, 3, 5, 8)
+  println(nth(2,ls3))
+
+
+
+
