@@ -356,4 +356,19 @@ def randomSelect1[A](n: Int, ls: List[A]): List[A] =
     e :: randomSelect1(n - 1, rest)
   }
 
+/***
+P23 (**) Extract a given number of randomly selected elements from a list.
+Example:
+  scala> randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h))
+res0: List[Symbol] = List('e, 'd, 'a)
+Hint: Use the solution to problem P20
+  */
 
+import P20.removeAt
+
+def randomSelect1[A](n: Int, ls: List[A]): List[A] =
+  if (n <= 0) Nil
+  else {
+    val (rest, e) = removeAt((new util.Random).nextInt(ls.length), ls)
+    e :: randomSelect1(n - 1, rest)
+  }
