@@ -372,3 +372,21 @@ def randomSelect1[A](n: Int, ls: List[A]): List[A] =
     val (rest, e) = removeAt((new util.Random).nextInt(ls.length), ls)
     e :: randomSelect1(n - 1, rest)
   }
+
+
+/***P24 (*) Lotto: Draw N different random numbers from the set 1..M.
+  Example:
+  scala> lotto(6, 49)
+res0: List[Int] = List(23, 1, 17, 33, 21, 37)
+  ***/
+
+// (new util.Random).nextInt(ls.length)
+
+def lotto(a:Int, b:Int):List[Int] = {
+
+
+ var resultList = for ( a <- 1 to a )
+   yield ((new util.Random).nextInt(b) )
+  resultList.toList
+  
+}
