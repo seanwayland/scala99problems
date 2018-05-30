@@ -304,3 +304,22 @@ def removeAt[A](n:Int, ls:List[A]):(List[A],A) = {
 
   
 }
+
+/***
+  * P21 (*) Insert an element at a given position into a list.
+  * Example:
+  * scala> insertAt('new, 1, List('a, 'b, 'c, 'd))
+  * res0: List[Symbol] = List('a, 'new, 'b, 'c, 'd)
+  */
+
+
+def insertAt[A](e:A, n:Int, ls:List[A]):List[A] = {
+
+  val ls1 = ls.drop(n)
+  val ls2 = ls.dropRight(ls.length - n )
+  val ls4 = List(e)
+  val ls3 = ls2 ++ ls4 ++ ls1
+
+  return ls3
+  
+}
