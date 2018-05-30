@@ -285,3 +285,22 @@ var ls1 = ls.dropRight( ls.length - math.abs(n) )
     
   
 }
+
+/***
+P20 (*) Remove the Kth element from a list.
+Return the list and the removed element in a Tuple. Elements are numbered from 0.
+Example:
+
+  scala> removeAt(1, List('a, 'b, 'c, 'd))
+res0: (List[Symbol], Symbol) = (List('a, 'c, 'd),'b)
+  */
+
+def removeAt[A](n:Int, ls:List[A]):(List[A],A) = {
+  val ls1 = ls.drop(n+1)
+  val ls2 = ls.dropRight(ls.length - n )
+  val ls3 = ls2 ++ ls1
+  val r = ls(n)
+  return (ls3,r)
+
+  
+}
